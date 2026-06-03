@@ -47,3 +47,4 @@ $currentPage = $currentPage ?? '';
             </ul>
         </nav>
     </header>
+    <!-- testowy komentarz -->
