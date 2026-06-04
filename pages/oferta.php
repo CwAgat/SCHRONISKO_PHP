@@ -1,11 +1,3 @@
-<?php
-$pageTitle = 'Oferta';
-$pageStyle = '../css/oferta.css';
-$currentPage = 'oferta';
-include 'includes/header.php';
-?>
-
-
 <section class="oferta">
     <div class="oferta-inner">
         <div class="oferta-text">
@@ -59,5 +51,3 @@ include 'includes/header.php';
     <h1>Nasze menu</h1>
     <iframe src="img/menu.pdf" title="Menu schroniska"></iframe>
 </section>
-
-<?php include 'footer.php'; ?>

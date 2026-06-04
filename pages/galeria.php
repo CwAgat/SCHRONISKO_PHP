@@ -1,11 +1,3 @@
-<?php
-$pageTitle = 'Galeria';
-$pageStyle = '../css/galeria.css';
-$currentPage = 'galeria';
-include 'includes/header.php';
-?>
-
-
 <section>
     <h1>Galeria</h1>
     <section>
@@ -43,5 +35,3 @@ include 'includes/header.php';
 <div id="lightbox">
     <img id="lightbox-img" alt="Podgląd zdjęcia">
 </div>
-
-<?php include 'footer.php'; ?>

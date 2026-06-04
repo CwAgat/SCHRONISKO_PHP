@@ -1,11 +1,3 @@
-<?php
-$pageTitle = 'Kontakt - Schronisko Kamieńczyk';
-$pageStyle = '../css/kontakt.css';
-$currentPage = 'kontakt';
-include 'includes/header.php';
-?>
-
-
 <main class="kontakt-page">
     <section class="kontakt-info">
         <div class="info-container">
@@ -42,5 +34,3 @@ include 'includes/header.php';
         </form>
     </section>
 </main>
-
-<?php include 'footer.php'; ?>

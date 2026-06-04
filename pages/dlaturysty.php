@@ -1,11 +1,3 @@
-<?php
-$pageTitle = 'Dla turysty';
-$pageStyle = '../css/dlaturysty.css';
-$currentPage = 'dlaturysty';
-include 'includes/header.php';
-?>
-
-
 <section class="info">
     <div class="info-inner">
         <div class="info-text">
@@ -39,5 +31,3 @@ include 'includes/header.php';
         </div>
     </div>
 </section>
-
-<?php include 'footer.php'; ?>

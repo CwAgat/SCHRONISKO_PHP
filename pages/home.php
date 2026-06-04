@@ -1,11 +1,3 @@
-<?php
-$pageTitle = 'Strona główna';
-$pageStyle = '../css/landing.css';
-$currentPage = 'home';
-include 'includes/header.php';
-?>
-
-
 <section class="welcome">
     <h1>Schronisko Kamieńczyk</h1>
     <p>Tam gdzie cisza i spokój spotykają się z naturą</p>
@@ -87,5 +79,3 @@ include 'includes/header.php';
         </div>
     </section>
 </main>
-
-<?php include 'footer.php'; ?>

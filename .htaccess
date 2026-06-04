@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /cwiczenia/SCHRONISKO_PHP/
+
+# Warunki: nie przekierowuj, jeśli plik lub folder istnieje
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Reguła: wszystko inne ślij do index.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L,QSA]
