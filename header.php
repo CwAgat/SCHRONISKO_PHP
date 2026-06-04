@@ -1,6 +1,7 @@
 <?php
 
 /** @var string $page */
+/** @var string $pageTitle */
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -9,7 +10,7 @@
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../img/logo.png">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
     <link rel="stylesheet" href="css/nav.css">
     <?php
     $pageCss = "css/$page.css";
@@ -34,6 +35,17 @@
                     <li><a href="dlaturysty" class="<?= $page === 'dlaturysty' ? 'active' : '' ?>">Dla Turysty</a></li>
                     <li><a href="galeria" class="<?= $page === 'galeria' ? 'active' : '' ?>">Galeria</a></li>
                     <li><a href="kontakt" class="<?= $page === 'kontakt' ? 'active' : '' ?>">Kontakt</a></li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="dropdown">
+                            <a href="admin">Admin</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="admin-rezerwacje">Rezerwacje</a></li>
+                                <li><a href="admin-galeria">Galeria</a></li>
+                                <li><a href="admin-posty">Posty</a></li>
+                                <li class="logout"><a href="admin-logout">Wyloguj</a></li>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </nav>
             <button class="burger" aria-label="Menu">☰</button>

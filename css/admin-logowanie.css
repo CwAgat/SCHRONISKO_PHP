@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background: #fff;
+}
+
+
+
+
+.logowanie-form-section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    background: #89C338;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logowanie-form-section h2 {
+    font-size: 28px;
+    margin: 0 0 30px 0;
+    text-align: center;
+    color: #FCFDFF;
+}
+
+.logowanie-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.logowanie-form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.logowanie-form input:focus {
+    outline: none;
+    border-color: #807051;
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #807051;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background: #6b5d43;
+}
+
+@media (max-width: 600px) {
+
+
+    .logowanie-form-section {
+        padding: 30px 20px;
+    }
+
+}

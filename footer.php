@@ -5,7 +5,13 @@
             <p class="copy">©Copyright 2025</p>
         </div>
     </footer>
-    <script src="../js/scripts.js" defer></script>
-</body>
+    <script src="js/scripts.js" defer></script>
+    </body>
 
-</html>
+    </html>
+    <?php
+    if (isset($conn) && $conn instanceof mysqli) {
+        mysqli_close($conn);
+    }
+
+    ?>
