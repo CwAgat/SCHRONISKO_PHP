@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Cze 04, 2026 at 11:46 PM
+-- Generation Time: Cze 05, 2026 at 11:29 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.0.30
 
@@ -66,7 +66,32 @@ INSERT INTO `photos` (`id`, `name`, `alt`, `category`) VALUES
 (6, 'szalas_wnetrze.png', 'wnętrze szałasu', 'szalas'),
 (7, 'szlak.png', 'zdjęcie szlaku', 'okolica'),
 (8, 'wodospad_zdj.png', 'wodospad', 'okolica'),
-(9, 'szlak2.jpg', 'zdjęcie szlaku', 'okolica');
+(10, '6a231bebbb213_szlak2.jpg', 'Zdjęcie szlaku', 'okolica'),
+(13, '6a2328e3e2ace_zimowykamien.jpg', 'zima', 'schronisko');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `short_text` varchar(115) NOT NULL,
+  `full_text` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `short_text`, `full_text`, `image`, `created_at`) VALUES
+(1, 'Zimowa promocja - 20% taniej!', 'W lutym oferujemy specjalne ceny na noclegi. Idealna okazja na zimowy wypoczynek...', 'W lutym oferujemy specjalne ceny na noclegi. Idealna okazja na                       zimowy wypoczynek w górach. Zarezerwuj pobyt minimum na 3 noce, a otrzymasz 20% rabatu. W cenie: śniadanie, dostęp do sauny i wypożyczalnia sprzętu narciarskiego. Promocja trwa do końca lutego! Nie przegap tej okazji - miejsca ograniczone.', 'zimowykamien.jpg', '2026-06-05 21:16:27'),
+(2, 'Weekend z gwiazdami', '15 lutego zapraszamy na nocną obserwację gwiazd z teleskopem. Liczba miejsc ograniczona...', '15 lutego zapraszamy na nocną obserwację gwiazd z profesjonalnym teleskopem. W programie: obserwacja planet, gwiazd podwójnych, mgławic i galaktyk. Prowadzenie: licencjonowany przewodnik astronomiczny. Początek o godzinie 20:00. W cenie: ciepła herbata i poczęstunek. Liczba miejsc ograniczona do 15 osób - rezerwuj już dziś! Warunkiem uczestnictwa jest bezchmurna pogoda.', 'gwiazdy.jpg', '2026-06-05 21:16:27'),
+(3, 'Zimowy Wodospad Kamieńczyk', 'Odkryj Wodospad Kamieńczyk w zimowej odsłonie. Lodowe sople i zamarznięta kaskada...', 'Odkryj Wodospad Kamieńczyk w zimowej odsłonie! Najwyższy wodospad polskich Karkonoszy (27 metrów) zimą zamienia się w bajkową krainę lodu. Gigantyczne sople, zamarznięte kaskady i lodowa grota tworzą niezapomniany widok. Trasa prowadzi przez ośnieżony las bukowy - jak z zimowej baśni. Odległość ze schroniska: 2 km, czas spaceru: 45 minut. UWAGA: zimą przy wodospadzie może być bardzo ślisko - koniecznie zabierz raki lub kijki trekkingowe. Najpiękniej po mocnych mrozach w styczniu i lutym!', 'zimowykamienczyk.jpg', '2026-06-05 21:16:27');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -86,6 +111,12 @@ ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -99,7 +130,13 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
