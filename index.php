@@ -14,7 +14,9 @@ $allowedPages = [
     'admin-galeria' => 'Edytuj galerię',
     'admin-posty' => 'Edytuj posty',
     'admin-rezerwacje' => 'Rezerwacje',
-    'admin-logout' => 'Wylogowanie'
+    'admin-logout' => 'Wylogowanie',
+    'admin-galeria-usun' => 'Usuwanie zdjęcia',
+    'admin-galeria-dodaj' => 'Dawanie zdjęcia'
 ];
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';

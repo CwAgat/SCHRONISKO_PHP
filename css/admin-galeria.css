@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background: #f6f6f5;
+}
+
+.zdjecia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-box {
+    width: 100%;
+    text-align: center;
+}
+
+.zdjecia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2%;
+    cursor: zoom-in;
+}
+
+.zdjecia img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+
+section h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.galeria {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.galeria h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo-box {
+    text-align: center;
+}
+
+.usun {
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    background: #c94343;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.usun:hover {
+    background: #a92f2f;
+}
+
+.msg {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    background: #fdeaea;
+    color: #c94343;
+    border: 1px solid #c94343;
+}
+
+
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 254, 254, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.galeria-box {
+    background: white;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 1200px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+/* dodawanie zdjęć */
+.upload_photo {
+    background: white;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+.upload_photo h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.upload_photo form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.przegladaj {
+    padding: 12px;
+    border: 2px dashed #89C338;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.upload_photo ::file-selector-button {
+    background-color: #89C338;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 0 15px 0 0;
+    border: none;
+    color: white;
+}
+
+.upload_photo ::file-selector-button:hover {
+    background-color: #54941E;
+}
+
+.opis,
+.upload_photo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.opis:focus,
+.upload_photo select:focus {
+    outline: none;
+    border-color: #54941E;
+}
+
+#kategoria {
+    color: #54941E;
+    margin-bottom: -10px;
+}
+
+.wgraj {
+    background: #54941E;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 14px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.wgraj:hover {
+    background: #457b19;
+}
+
+.msg {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #5B4329;
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 0 16px;
+        margin: 24px auto;
+    }
+
+
+    .zdjecia {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .zdjecia img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    #lightbox img {
+        width: 90%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+}

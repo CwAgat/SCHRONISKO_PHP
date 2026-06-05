@@ -79,6 +79,10 @@ header {
     position: relative;
 }
 
+.dropdown .admin {
+    color: #89C338;
+}
+
 .dropdown-menu {
     display: none;
     flex-direction: column;

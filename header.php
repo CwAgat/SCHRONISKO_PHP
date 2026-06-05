@@ -37,7 +37,7 @@
                     <li><a href="kontakt" class="<?= $page === 'kontakt' ? 'active' : '' ?>">Kontakt</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="dropdown">
-                            <a href="admin">Admin</a>
+                            <a href="admin" class="admin">Admin</a>
                             <ul class="dropdown-menu">
                                 <li><a href="admin-rezerwacje">Rezerwacje</a></li>
                                 <li><a href="admin-galeria">Galeria</a></li>

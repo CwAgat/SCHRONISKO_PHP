@@ -12,14 +12,21 @@ body {
 }
 
 .zdjecia {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     justify-content: center;
+    gap: 20px;
+}
+
+.photo-box {
+    width: 100%;
+    text-align: center;
 }
 
 .zdjecia img {
-    width: 300px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 2%;
     cursor: zoom-in;
 }
@@ -29,11 +36,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-section {
-    max-width: 1600px;
-    margin: 40px auto;
-    padding: 0 40px;
-}
+
 
 section h1 {
     text-align: center;
@@ -41,6 +44,8 @@ section h1 {
 }
 
 .galeria {
+    max-width: 1200px;
+    margin: 0 auto;
     margin-bottom: 60px;
 }
 
