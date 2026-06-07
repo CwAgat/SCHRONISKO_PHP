@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Cze 05, 2026 at 11:29 PM
+-- Generation Time: Cze 07, 2026 at 01:55 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.0.30
 
@@ -67,7 +67,7 @@ INSERT INTO `photos` (`id`, `name`, `alt`, `category`) VALUES
 (7, 'szlak.png', 'zdjęcie szlaku', 'okolica'),
 (8, 'wodospad_zdj.png', 'wodospad', 'okolica'),
 (10, '6a231bebbb213_szlak2.jpg', 'Zdjęcie szlaku', 'okolica'),
-(13, '6a2328e3e2ace_zimowykamien.jpg', 'zima', 'schronisko');
+(14, '6a2420424f121_zimowykamien.jpg', 'zima', 'schronisko');
 
 -- --------------------------------------------------------
 
@@ -89,9 +89,10 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `short_text`, `full_text`, `image`, `created_at`) VALUES
-(1, 'Zimowa promocja - 20% taniej!', 'W lutym oferujemy specjalne ceny na noclegi. Idealna okazja na zimowy wypoczynek...', 'W lutym oferujemy specjalne ceny na noclegi. Idealna okazja na                       zimowy wypoczynek w górach. Zarezerwuj pobyt minimum na 3 noce, a otrzymasz 20% rabatu. W cenie: śniadanie, dostęp do sauny i wypożyczalnia sprzętu narciarskiego. Promocja trwa do końca lutego! Nie przegap tej okazji - miejsca ograniczone.', 'zimowykamien.jpg', '2026-06-05 21:16:27'),
 (2, 'Weekend z gwiazdami', '15 lutego zapraszamy na nocną obserwację gwiazd z teleskopem. Liczba miejsc ograniczona...', '15 lutego zapraszamy na nocną obserwację gwiazd z profesjonalnym teleskopem. W programie: obserwacja planet, gwiazd podwójnych, mgławic i galaktyk. Prowadzenie: licencjonowany przewodnik astronomiczny. Początek o godzinie 20:00. W cenie: ciepła herbata i poczęstunek. Liczba miejsc ograniczona do 15 osób - rezerwuj już dziś! Warunkiem uczestnictwa jest bezchmurna pogoda.', 'gwiazdy.jpg', '2026-06-05 21:16:27'),
-(3, 'Zimowy Wodospad Kamieńczyk', 'Odkryj Wodospad Kamieńczyk w zimowej odsłonie. Lodowe sople i zamarznięta kaskada...', 'Odkryj Wodospad Kamieńczyk w zimowej odsłonie! Najwyższy wodospad polskich Karkonoszy (27 metrów) zimą zamienia się w bajkową krainę lodu. Gigantyczne sople, zamarznięte kaskady i lodowa grota tworzą niezapomniany widok. Trasa prowadzi przez ośnieżony las bukowy - jak z zimowej baśni. Odległość ze schroniska: 2 km, czas spaceru: 45 minut. UWAGA: zimą przy wodospadzie może być bardzo ślisko - koniecznie zabierz raki lub kijki trekkingowe. Najpiękniej po mocnych mrozach w styczniu i lutym!', 'zimowykamienczyk.jpg', '2026-06-05 21:16:27');
+(3, 'Zimowy Wodospad Kamieńczyk', 'Odkryj Wodospad Kamieńczyk w zimowej odsłonie. Lodowe sople i zamarznięta kaskada...', 'Odkryj Wodospad Kamieńczyk w zimowej odsłonie! Najwyższy wodospad polskich Karkonoszy (27 metrów) zimą zamienia się w bajkową krainę lodu. Gigantyczne sople, zamarznięte kaskady i lodowa grota tworzą niezapomniany widok. Trasa prowadzi przez ośnieżony las bukowy - jak z zimowej baśni. Odległość ze schroniska: 2 km, czas spaceru: 45 minut. UWAGA: zimą przy wodospadzie może być bardzo ślisko - koniecznie zabierz raki lub kijki trekkingowe. Najpiękniej po mocnych mrozach w styczniu i lutym!', 'zimowykamienczyk.jpg', '2026-06-05 21:16:27'),
+(4, 'Nowe dania w karcie', 'Rozszerzyliśmy menu o tradycyjne potrawy regionalne. Spróbuj naszych domowych specjałów', 'Rozszerzyliśmy menu o tradycyjne potrawy regionalne. Spróbuj naszych domowych pierogów, żurku i placków ziemniaczanych przygotowanych według starych, rodzinnych receptur. Wszystkie dania gotujemy ze świeżych produktów od lokalnych gospodarzy. W ofercie również wegańskie i wegetariańskie opcje. Szczególnie polecamy nasze domowe ciasta - wypiekane codziennie rano!', '6a25513dd7bab_dania.webp', '2026-06-07 11:08:45'),
+(5, 'Zimowa promocja - 20% taniej!', 'W lutym oferujemy specjalne ceny na noclegi. Idealna okazja na zimowy wypoczynek...', 'W lutym oferujemy specjalne ceny na noclegi. Idealna okazja na zimowy wypoczynek w górach. Zarezerwuj pobyt minimum na 3 noce, a otrzymasz 20% rabatu. W cenie: śniadanie, dostęp do sauny i wypożyczalnia sprzętu narciarskiego. Promocja trwa do końca lutego! Nie przegap tej okazji - miejsca ograniczone.', '6a2554d95b81e_zimowykamien.jpg', '2026-06-07 11:24:09');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -130,13 +131,13 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
