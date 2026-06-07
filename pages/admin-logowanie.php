@@ -25,19 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 header("Location: admin");
                 exit();
             } else {
-                $komunikat = "<p style='color:red;'>Błędne hasło.</p>";
+                $komunikat = "Błędne hasło.";
             }
         } else {
-            $komunikat = "<p style='color:red;'>Użytkownik o takim adresie e-mail nie istnieje</p>";
+            $komunikat = "Użytkownik o takim adresie e-mail nie istnieje";
         }
     }
 }
 
 ?>
-
-<?php
-echo $komunikat;
-?>
+<?php if (!empty($komunikat)): ?>
+    <p class="komunikat">
+        <?= htmlspecialchars($komunikat) ?>
+    </p>
+<?php $komunikat = "";
+endif; ?>
 
 <section class="logowanie-form-section">
     <h2>Zaloguj się</h2>

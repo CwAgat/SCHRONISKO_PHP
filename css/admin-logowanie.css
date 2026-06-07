@@ -75,6 +75,20 @@ body {
     background: #6b5d43;
 }
 
+.komunikat {
+    width: 75%;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #5B4329;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fdeaea;
+    color: #c94343;
+    border: 1px solid #c94343;
+}
+
 @media (max-width: 600px) {
 
     .logowanie-form-section {

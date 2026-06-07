@@ -89,9 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES['photo'])) {
 }
 ?>
 
-<?php
-echo $komunikat;
-?>
+
 
 <?php if (isset($_SESSION['msg'])): ?>
 
