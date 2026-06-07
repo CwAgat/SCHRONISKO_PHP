@@ -34,6 +34,7 @@ body {
 
 .przegladaj {
     padding: 12px;
+    width: 90%;
     border: 2px dashed #89C338;
     border-radius: 8px;
     background: #fafafa;
@@ -145,6 +146,28 @@ label {
     border: 1px solid #c94343;
 }
 
+.anuluj {
+    width: 80%;
+    margin: auto;
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 8px;
+
+    background: #ccc;
+    color: #333;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    text-align: center;
+
+}
+
+.anuluj:hover {
+    background: #b5b5b5;
+}
+
 @media (max-width: 600px) {
 
     .dodaj_post {
@@ -158,5 +181,18 @@ label {
 
     .full_text {
         min-height: 180px;
+    }
+
+    .current-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .current-image {
+        padding: 12px;
+    }
+
+    .msg {
+        width: 100%;
     }
 }

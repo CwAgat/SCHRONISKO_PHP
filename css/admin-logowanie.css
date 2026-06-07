@@ -77,9 +77,30 @@ body {
 
 @media (max-width: 600px) {
 
-
     .logowanie-form-section {
-        padding: 30px 20px;
+        width: 92%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 25px 16px;
+        border-radius: 10px;
     }
 
+    .logowanie-form-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .logowanie-form {
+        max-width: 100%;
+    }
+
+    .logowanie-form input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
 }

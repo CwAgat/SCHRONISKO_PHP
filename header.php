@@ -57,6 +57,10 @@
                 <li><a href="dlaturysty">Dla turysty</a></li>
                 <li><a href="galeria">Galeria</a></li>
                 <li><a href="kontakt">Kontakt</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="dropdown"> <a href="admin" class="admin">Admin</a></li>
+                    <li class="logout"><a href="admin-logout">Wyloguj</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

@@ -197,7 +197,8 @@ echo $komunikat;
             <input type="file" name="photo" accept="image/*" class="przegladaj">
         </div>
 
-        <button type="submit" class="dodaj">Dodaj post</button>
+        <button type="submit" class="dodaj">Zapisz post</button>
+        <a href="admin-posty" class="anuluj">Anuluj</a>
     </form>
 
 </section>
