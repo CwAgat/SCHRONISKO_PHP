@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background: #f6f6f5;
+}
+
+.dodaj_post {
+    background: white;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+.dodaj_post h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dodaj_post form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.przegladaj {
+    padding: 12px;
+    border: 2px dashed #89C338;
+    border-radius: 8px;
+    background: #fafafa;
+    height: 60px;
+}
+
+.dodaj_post ::file-selector-button {
+    background-color: #89C338;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 0 15px 0 0;
+    border: none;
+    color: white;
+}
+
+.dodaj_post ::file-selector-button:hover {
+    background-color: #54941E;
+}
+
+.tekst,
+.full_text {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.full_text {
+    min-height: 220px;
+    resize: vertical;
+}
+
+.tekst:focus,
+.full_text:focus {
+    outline: none;
+    border-color: #54941E;
+}
+
+
+.dodaj {
+    width: 80%;
+    margin: 10px auto 0;
+    background: #54941E;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 14px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.dodaj:hover {
+    background: #457b19;
+}
+
+label {
+    color: #54941E;
+    margin-bottom: -10px;
+}
+
+.current-image {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fafafa;
+    align-items: center;
+}
+
+.current-image p {
+    margin: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #5B4329;
+    font-size: 14px;
+}
+
+.current-image img {
+    width: 220px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.msg {
+    width: 75%;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #5B4329;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fdeaea;
+    color: #c94343;
+    border: 1px solid #c94343;
+}
+
+@media (max-width: 600px) {
+
+    .dodaj_post {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .dodaj {
+        width: 100%;
+    }
+
+    .full_text {
+        min-height: 180px;
+    }
+}

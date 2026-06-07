@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background: #f6f6f5;
+}
+
+.admin-posts {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.actions {
+    margin-bottom: 25px;
+}
+
+.add-post {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #89C338;
+    color: white;
+
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.add-post:hover {
+    background: #54941E;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background: white;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+th {
+    background: #807051;
+    color: white;
+
+    padding: 15px;
+    text-align: middle;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    text-align: center;
+}
+
+td img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit {
+    display: inline-block;
+    background: #89C338;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.usun {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    background: #c94343;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.edit:hover {
+    background: #6ea02b;
+}
+
+.usun:hover {
+    background: #a92f2f;
+}
+
+.msg {
+    width: 75%;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #5B4329;
+    padding: 15px;
+    border-radius: 8px;
+    background: #e8f6dd;
+    color: #54941E;
+    border: 1px solid #54941E;
+}

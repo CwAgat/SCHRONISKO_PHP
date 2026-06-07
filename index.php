@@ -11,12 +11,15 @@ $allowedPages = [
     'kontakt' => 'Kontakt',
     'admin-logowanie' => 'Zaloguj się',
     'admin' => 'Panel administratora',
-    'admin-galeria' => 'Edytuj galerię',
-    'admin-posty' => 'Edytuj posty',
+    'admin-galeria' => 'Zarządzaj galerią',
+    'admin-posty' => 'Zarządzaj postami',
     'admin-rezerwacje' => 'Rezerwacje',
     'admin-logout' => 'Wylogowanie',
     'admin-galeria-usun' => 'Usuwanie zdjęcia',
-    'admin-galeria-dodaj' => 'Dawanie zdjęcia'
+    'admin-galeria-dodaj' => 'Dodawanie zdjęcia',
+    'admin-posty-usun' => 'Usuwanie posta',
+    'admin-posty-dodaj' => 'Dodawanie posta',
+    'admin-posty-edytuj' => 'Edycja posta'
 ];
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
