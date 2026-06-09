@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteBase /cwiczenia/SCHRONISKO_PHP/
+RewriteBase /schronisko_strona/
+#RewriteBase /SCHRONISKO_PHP/
 
 # Warunki: nie przekierowuj, jeśli plik lub folder istnieje
 RewriteCond %{REQUEST_FILENAME} !-f

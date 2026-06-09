@@ -40,6 +40,7 @@
                             <a href="admin" class="admin">Admin</a>
                             <ul class="dropdown-menu">
                                 <li><a href="admin-rezerwacje">Rezerwacje</a></li>
+                                <li><a href="admin-kontakt">Wiadomości</a></li>
                                 <li><a href="admin-galeria">Galeria</a></li>
                                 <li><a href="admin-posty">Posty</a></li>
                                 <li class="logout"><a href="admin-logout">Wyloguj</a></li>

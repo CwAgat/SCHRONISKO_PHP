@@ -9,6 +9,7 @@
                 <li>pokój dwuosobowy (łazienka i podwójne łóżko) - <b>65 zł/os</b></li>
                 <li>przy większej grupie możliwe są 4 dostawki - <b>45 zł/os</b></li>
             </ul>
+            <a href="rezerwacje" class="btn-rezerwuj">Zarezerwuj nocleg</a>
         </div>
         <div class="oferta-photo">
             <img class="photo" src="img/nocleg.png" alt="nocleg">

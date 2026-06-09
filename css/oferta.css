@@ -46,6 +46,40 @@ body {
     color: #89C338;
 }
 
+.btn-rezerwuj {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+    padding: 14px 32px;
+    background: #54941E;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(84, 148, 30, 0.35);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.btn-rezerwuj::after {
+    content: '→';
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.btn-rezerwuj:hover {
+    background: #3d6e15;
+    box-shadow: 0 6px 20px rgba(84, 148, 30, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-rezerwuj:hover::after {
+    transform: translateX(4px);
+}
+
 .photo {
     border-radius: 2%;
     width: 100%;

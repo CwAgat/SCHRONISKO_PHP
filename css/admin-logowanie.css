@@ -46,7 +46,7 @@ body {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     transition: border-color 0.3s;
 }
@@ -64,7 +64,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;

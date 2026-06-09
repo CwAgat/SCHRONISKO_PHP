@@ -1,3 +1,32 @@
+<?php
+/** @var mysqli $conn */
+$msgSuccess = false;
+$msgError   = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name    = trim($_POST['name']    ?? '');
+    $email   = trim($_POST['email']   ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    if (!$name || !$email || !$subject || !$message) {
+        $msgError = 'Wszystkie pola są wymagane.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $msgError = 'Podaj prawidłowy adres e-mail.';
+    } else {
+        $stmt = mysqli_prepare($conn, "
+            INSERT INTO contact_messages (name, email, subject, message)
+            VALUES (?, ?, ?, ?)
+        ");
+        mysqli_stmt_bind_param($stmt, 'ssss', $name, $email, $subject, $message);
+        if (mysqli_stmt_execute($stmt)) {
+            $msgSuccess = true;
+        } else {
+            $msgError = 'Błąd serwera. Spróbuj ponownie.';
+        }
+    }
+}
+?>
 <main class="kontakt-page">
     <section class="kontakt-info">
         <div class="info-container">
@@ -23,14 +52,29 @@
 
     <section class="kontakt-form-section">
         <h2>Formularz kontaktowy</h2>
-        <form class="kontakt-form" method="post" action="">
-            <div class="form-row">
-                <input type="text" name="name" placeholder="Imię i nazwisko" required>
-                <input type="email" name="email" placeholder="E-mail" required>
+
+        <?php if ($msgSuccess): ?>
+            <div class="form-alert form-alert-success">
+                Wiadomość wysłana! Odpiszemy najszybciej jak to możliwe.
             </div>
-            <input type="text" name="subject" placeholder="Temat" required>
-            <textarea name="message" placeholder="Wiadomość" rows="6" required></textarea>
-            <button type="submit" class="submit-btn">Wyślij</button>
-        </form>
+        <?php else: ?>
+            <?php if ($msgError): ?>
+                <div class="form-alert form-alert-error">
+                    <?= htmlspecialchars($msgError, ENT_QUOTES, 'UTF-8') ?>
+                </div>
+            <?php endif; ?>
+            <form class="kontakt-form" method="post" action="">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Imię i nazwisko"
+                           value="<?= htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
+                    <input type="email" name="email" placeholder="E-mail"
+                           value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
+                </div>
+                <input type="text" name="subject" placeholder="Temat"
+                       value="<?= htmlspecialchars($_POST['subject'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
+                <textarea name="message" placeholder="Wiadomość" rows="6" required><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+                <button type="submit" class="submit-btn">Wyślij</button>
+            </form>
+        <?php endif; ?>
     </section>
 </main>

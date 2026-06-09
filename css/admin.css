@@ -73,26 +73,149 @@ body {
     color: #666;
 }
 
-/* statystyki */
-.admin-stats {
-    display: grid;
-    gap: 20px;
+/* Kafelek z badge */
+.admin-card {
+    position: relative;
+}
 
-    margin-bottom: 50px;
+.card-badge {
+    display: inline-block;
+    margin-top: 8px;
+    background: #c94343;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+/* Tytuły sekcji */
+.section-title {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 0 16px;
+    letter-spacing: 0.03em;
+}
+
+/* Statystyki */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
 }
 
 .stat-box {
-    background: #89C338;
-    color: white;
+    border-radius: 14px;
+    padding: 24px 16px;
     text-align: center;
-
-    border-radius: 16px;
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.stat-box h3 {
-    font-size: 36px;
-    margin-bottom: 10px;
+.stat-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.stat-pending   { background: #fff3cd; color: #856404; }
+.stat-confirmed { background: #d4edda; color: #155724; }
+.stat-cancelled { background: #e2e3e5; color: #495057; }
+.stat-messages  { background: #f8d7da; color: #721c24; }
+
+/* Dolna sekcja */
+.dashboard-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard-widget {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.widget-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #5B4329;
+}
+
+.widget-header a {
+    font-size: 0.8rem;
+    color: #89C338;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.widget-header a:hover { text-decoration: underline; }
+
+.widget-empty {
+    color: #aaa;
+    font-size: 0.88rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.widget-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.widget-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 8px;
+}
+
+.widget-list li:last-child { border-bottom: none; }
+
+.widget-list-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.widget-list-main strong { font-size: 0.88rem; color: #2c3e50; }
+
+.widget-sub {
+    font-size: 0.78rem;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.widget-date {
+    font-size: 0.78rem;
+    color: #999;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
@@ -107,7 +230,7 @@ body {
         border-radius: 12px;
     }
 
-    /* KARTY → jedna pod drugą */
+    /* KARTY */
     .admin-cards {
         flex-direction: column;
         gap: 15px;
@@ -138,7 +261,11 @@ body {
         padding: 18px;
     }
 
-    .stat-box h3 {
-        font-size: 28px;
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-bottom {
+        grid-template-columns: 1fr;
     }
 }

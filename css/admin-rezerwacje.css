@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f6f6f5;
+    color: #000;
+}
+
+.admin-rezerwacje {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.admin-rezerwacje h1 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.msg-empty {
+    color: #555;
+    font-style: italic;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+thead th {
+    background: #807051;
+    color: #fff;
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+td small { color: #888; }
+
+/* Kolory wierszy */
+.row-pending   { background: #fffde7; }
+.row-confirmed { background: #f1f8e9; }
+.row-cancelled { background: #fafafa; color: #aaa; }
+
+/* status */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.badge-pending   { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+.badge-confirmed { background: #d4edda; color: #155724; border: 1px solid #28a745; }
+.badge-cancelled { background: #e2e3e5; color: #6c757d; border: 1px solid #ccc; }
+
+/* guziki */
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.actions-cell form { margin: 0; }
+
+.btn-confirm {
+    background: #89C338;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+
+.btn-confirm:hover { background: #54941E; }
+
+.btn-cancel {
+    background: #c94343;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+
+.btn-cancel:hover { background: #a92f2f; }
+
+.text-muted { color: #bbb; }
