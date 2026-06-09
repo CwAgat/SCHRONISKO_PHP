@@ -1,6 +1,13 @@
 <?php
 /** @var mysqli $conn */
 
+// Inspiracja i źródła:
+// - Wzorzec SQL do wykrywania nakładających się rezerwacji:
+//   https://www.daniweb.com/programming/web-development/threads/479348/room-availability-check-with-date-range
+// - Ogólna architektura systemu rezerwacji PHP/MySQL:
+//   https://phpzag.com/online-hotel-reservation-system-with-php-mysql/
+// - Formularz rezerwacji: https://codeshack.io/hotel-reservation-form-php/
+
 $formSuccess = false;
 $formError   = '';
 
@@ -17,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $formError = 'Wszystkie pola są wymagane.';
     } elseif (!filter_var($guest_email, FILTER_VALIDATE_EMAIL)) {
         $formError = 'Podaj prawidłowy adres e-mail.';
+    } elseif (!preg_match('/^[\d\s\+\-\(\)]{7,15}$/', $guest_phone)) {
+        $formError = 'Podaj prawidłowy numer telefonu (cyfry, spacje, +, -).';
     } elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date_from) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $date_to)) {
         $formError = 'Nieprawidłowy format daty.';
     } elseif ($date_from < date('Y-m-d')) {

@@ -231,6 +231,7 @@ body {
     cursor: pointer;
     font-size: 0.85rem;
     transition: background 0.15s;
+    margin-top: 0.5rem;
 }
 
 #btn-reset:hover {
@@ -384,7 +385,6 @@ body {
 .btn-submit:hover {
     background: #1f527f;
 }
-
 
 @media (max-width: 620px) {
 
