@@ -31,7 +31,12 @@
             <nav class="menu">
                 <ul>
                     <li><a href="home" class="<?= $page === 'home' ? 'active' : '' ?>">Strona Główna</a></li>
-                    <li><a href="oferta" class="<?= $page === 'oferta' ? 'active' : '' ?>">Oferta</a></li>
+                    <li class="dropdown">
+                        <a href="oferta" class="<?= $page === 'oferta' ? 'active' : '' ?>">Oferta</a>
+                        <ul class="dropdown-menu dropdown-menu-slim">
+                            <li><a href="rezerwacje">Rezerwuj nocleg</a></li>
+                        </ul>
+                    </li>
                     <li><a href="dlaturysty" class="<?= $page === 'dlaturysty' ? 'active' : '' ?>">Dla Turysty</a></li>
                     <li><a href="galeria" class="<?= $page === 'galeria' ? 'active' : '' ?>">Galeria</a></li>
                     <li><a href="kontakt" class="<?= $page === 'kontakt' ? 'active' : '' ?>">Kontakt</a></li>
@@ -55,6 +60,7 @@
             <ul>
                 <li><a href="home">Strona główna</a></li>
                 <li><a href="oferta">Oferta</a></li>
+                <li><a href="rezerwacje">Rezerwuj nocleg</a></li>
                 <li><a href="dlaturysty">Dla turysty</a></li>
                 <li><a href="galeria">Galeria</a></li>
                 <li><a href="kontakt">Kontakt</a></li>

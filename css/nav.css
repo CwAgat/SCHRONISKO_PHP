@@ -143,6 +143,18 @@ header {
     font-weight: 700;
 }
 
+.dropdown-menu-slim {
+    min-width: 0;
+    width: 100%;
+}
+
+.dropdown-menu-slim a {
+    font-size: 12px;
+    min-height: auto;
+    padding: 8px 12px;
+    text-align: center;
+}
+
 /* mobilne */
 .menu-mobile {
     display: none;
