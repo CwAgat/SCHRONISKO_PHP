@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -25,14 +27,16 @@ body {
     font-style: italic;
 }
 
+
 /* Tabela */
+
 table {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
 }
 
 thead th {
@@ -51,14 +55,29 @@ td {
     font-size: 0.88rem;
 }
 
-td small { color: #888; }
+td small {
+    color: #888;
+}
+
 
 /* Kolory wierszy */
-.row-pending   { background: #fffde7; }
-.row-confirmed { background: #f1f8e9; }
-.row-cancelled { background: #fafafa; color: #aaa; }
 
-/* status */
+.row-pending {
+    background: #fffde7;
+}
+
+.row-confirmed {
+    background: #f1f8e9;
+}
+
+.row-cancelled {
+    background: #fafafa;
+    color: #aaa;
+}
+
+
+/* Badge statusu */
+
 .badge {
     display: inline-block;
     padding: 4px 10px;
@@ -67,11 +86,27 @@ td small { color: #888; }
     font-weight: 600;
 }
 
-.badge-pending   { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-.badge-confirmed { background: #d4edda; color: #155724; border: 1px solid #28a745; }
-.badge-cancelled { background: #e2e3e5; color: #6c757d; border: 1px solid #ccc; }
+.badge-pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffc107;
+}
 
-/* guziki */
+.badge-confirmed {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #28a745;
+}
+
+.badge-cancelled {
+    background: #e2e3e5;
+    color: #6c757d;
+    border: 1px solid #ccc;
+}
+
+
+/* Przyciski akcji */
+
 .actions-cell {
     display: flex;
     justify-content: center;
@@ -80,7 +115,9 @@ td small { color: #888; }
     flex-wrap: wrap;
 }
 
-.actions-cell form { margin: 0; }
+.actions-cell form {
+    margin: 0;
+}
 
 .btn-confirm {
     background: #89C338;
@@ -95,7 +132,9 @@ td small { color: #888; }
     transition: background 0.15s;
 }
 
-.btn-confirm:hover { background: #54941E; }
+.btn-confirm:hover {
+    background: #54941E;
+}
 
 .btn-cancel {
     background: #c94343;
@@ -110,6 +149,10 @@ td small { color: #888; }
     transition: background 0.15s;
 }
 
-.btn-cancel:hover { background: #a92f2f; }
+.btn-cancel:hover {
+    background: #a92f2f;
+}
 
-.text-muted { color: #bbb; }
+.text-muted {
+    color: #bbb;
+}

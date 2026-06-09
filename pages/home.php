@@ -2,13 +2,16 @@
 
 /** @var mysqli $conn */
 $sql = "
+
 SELECT
     id,
     title,
     short_text,
     full_text,
-    image
+    image,
+    created_at
 FROM posts
+ORDER BY created_at DESC
 ";
 $result = $conn->query($sql);
 

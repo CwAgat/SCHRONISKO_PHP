@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -23,7 +25,9 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* alerty */
+
+/* Alerty */
+
 .alert {
     padding: 0.9rem 1.2rem;
     border-radius: 6px;
@@ -43,7 +47,9 @@ body {
     border: 1px solid #f5c6cb;
 }
 
-/* legenda*/
+
+/* Legenda */
+
 .calendar-legend {
     display: flex;
     gap: 1rem;
@@ -66,12 +72,25 @@ body {
     border-radius: 3px;
 }
 
-.legend-item.available::before  { background: #a8d5a2; }
-.legend-item.limited::before    { background: #f7c96b; }
-.legend-item.full::before       { background: #e88080; }
-.legend-item.past::before       { background: #d0d0d0; }
+.legend-item.available::before {
+    background: #a8d5a2;
+}
 
-/* kalendarze */
+.legend-item.limited::before {
+    background: #f7c96b;
+}
+
+.legend-item.full::before {
+    background: #e88080;
+}
+
+.legend-item.past::before {
+    background: #d0d0d0;
+}
+
+
+/* Kalendarze */
+
 .calendars-wrapper {
     display: flex;
     gap: 2rem;
@@ -114,33 +133,76 @@ body {
     border-radius: 4px;
 }
 
-.calendar-table td.empty { background: transparent; }
+.calendar-table td.empty {
+    background: transparent;
+}
 
-/* Dostępność */
-.day { cursor: default; border: 2px solid transparent; transition: border-color 0.15s; }
+.day {
+    cursor: default;
+    border: 2px solid transparent;
+    transition: border-color 0.15s;
+}
 
-.day.available { background: #a8d5a2; cursor: pointer; }
-.day.limited   { background: #f7c96b; cursor: pointer; }
-.day.full      { background: #e88080; }
-.day.past      { background: #ebebeb; color: #aaa; }
-.day.today     { outline: 2px solid #2c3e50; }
+.day.available {
+    background: #a8d5a2;
+    cursor: pointer;
+}
+
+.day.limited {
+    background: #f7c96b;
+    cursor: pointer;
+}
+
+.day.full {
+    background: #e88080;
+}
+
+.day.past {
+    background: #ebebeb;
+    color: #aaa;
+}
+
+.day.today {
+    outline: 2px solid #2c3e50;
+}
 
 .day.available:hover,
-.day.limited:hover  { border-color: #2c3e50; }
+.day.limited:hover {
+    border-color: #2c3e50;
+}
 
-/*zakresy*/
 .day.sel-from,
-.day.sel-to  { background: #2c6fad !important; color: #fff !important; border-radius: 4px; }
+.day.sel-to {
+    background: #2c6fad !important;
+    color: #fff !important;
+    border-radius: 4px;
+}
 
-.day.in-range { background: #9ec5e8 !important; border-radius: 0; }
+.day.in-range {
+    background: #9ec5e8 !important;
+    border-radius: 0;
+}
 
-.day-num  { display: block; font-weight: 600; }
-.day-free { display: block; font-size: 0.7rem; color: inherit; opacity: 0.85; }
+.day-num {
+    display: block;
+    font-weight: 600;
+}
+
+.day-free {
+    display: block;
+    font-size: 0.7rem;
+    color: inherit;
+    opacity: 0.85;
+}
 
 .day.sel-from .day-free,
-.day.sel-to   .day-free { color: #fff; }
+.day.sel-to .day-free {
+    color: #fff;
+}
 
-/* wybor */
+
+/* Wybór dat */
+
 .selection-info {
     background: #eef4fb;
     border: 1px solid #b8d4f0;
@@ -154,7 +216,11 @@ body {
     flex-wrap: wrap;
 }
 
-.selection-info p { margin: 0; font-weight: 500; color: #2c3e50; }
+.selection-info p {
+    margin: 0;
+    font-weight: 500;
+    color: #2c3e50;
+}
 
 #btn-reset {
     background: transparent;
@@ -166,10 +232,20 @@ body {
     font-size: 0.85rem;
     transition: background 0.15s;
 }
-#btn-reset:hover { background: #2c6fad; color: #fff; }
 
-/* pokoje */
-#rooms-section h2 { font-size: 1.3rem; margin-bottom: 0.8rem; color: #2c3e50; }
+#btn-reset:hover {
+    background: #2c6fad;
+    color: #fff;
+}
+
+
+/* Lista pokoi */
+
+#rooms-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+}
 
 .rooms-list {
     display: flex;
@@ -193,16 +269,41 @@ body {
     font-family: inherit;
 }
 
-.room-card:hover           { border-color: #2c6fad; box-shadow: 0 2px 8px rgba(44,111,173,0.15); }
-.room-card.selected        { border-color: #2c6fad; background: #eef4fb; }
+.room-card:hover {
+    border-color: #2c6fad;
+    box-shadow: 0 2px 8px rgba(44, 111, 173, 0.15);
+}
 
-.room-name     { font-weight: 600; font-size: 0.95rem; color: #2c3e50; }
-.room-capacity { font-size: 0.8rem; color: #777; }
-.room-price    { font-size: 0.8rem; color: #54941E; font-weight: 600; }
+.room-card.selected {
+    border-color: #2c6fad;
+    background: #eef4fb;
+}
 
-.loading { color: #555; font-style: italic; }
+.room-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
 
-/* formularz */
+.room-capacity {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.room-price {
+    font-size: 0.8rem;
+    color: #54941E;
+    font-weight: 600;
+}
+
+.loading {
+    color: #555;
+    font-style: italic;
+}
+
+
+/* Formularz rezerwacji */
+
 .reservation-form {
     background: #fafafa;
     border: 1px solid #e0e0e0;
@@ -212,7 +313,11 @@ body {
     margin: 0 auto;
 }
 
-.reservation-form h2 { font-size: 1.3rem; margin-bottom: 1rem; color: #2c3e50; }
+.reservation-form h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
 
 .form-summary {
     background: #eef4fb;
@@ -259,7 +364,7 @@ body {
 .form-group input:focus {
     outline: none;
     border-color: #2c6fad;
-    box-shadow: 0 0 0 3px rgba(44,111,173,0.15);
+    box-shadow: 0 0 0 3px rgba(44, 111, 173, 0.15);
 }
 
 .btn-submit {
@@ -276,11 +381,23 @@ body {
     font-family: inherit;
 }
 
-.btn-submit:hover { background: #1f527f; }
+.btn-submit:hover {
+    background: #1f527f;
+}
 
 
 @media (max-width: 620px) {
-    .calendars-wrapper { flex-direction: column; }
-    .reservation-form  { padding: 1rem; }
-    .calendar-legend   { gap: 0.6rem; }
+
+    .calendars-wrapper {
+        flex-direction: column;
+    }
+
+    .reservation-form {
+        padding: 1rem;
+    }
+
+    .calendar-legend {
+        gap: 0.6rem;
+    }
+
 }
