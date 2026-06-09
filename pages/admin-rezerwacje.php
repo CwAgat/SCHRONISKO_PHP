@@ -1,4 +1,5 @@
 <?php
+// strona dostępna tylko dla zalogowanego admina 
 if (!isset($_SESSION['user_id'])) {
     header("Location: admin-logowanie");
     exit();
@@ -6,22 +7,22 @@ if (!isset($_SESSION['user_id'])) {
 
 /** @var mysqli $conn */
 
-// obsługa akcji
+//obsluga akji, zmiany statusu rezerwacji
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id     = (int)($_POST['reservation_id'] ?? 0);
-    $action = $_POST['action'] ?? '';
+    $id     = (int)($_POST['reservation_id'] ?? 0);  // id rezerwacji do zmiany
+    $action = $_POST['action'] ?? '';                  // confirmed albo canelled
 
     if ($id && in_array($action, ['confirmed', 'cancelled'], true)) {
         $stmt = mysqli_prepare($conn, "UPDATE reservations SET status = ? WHERE id = ?");
         mysqli_stmt_bind_param($stmt, 'si', $action, $id);
         mysqli_stmt_execute($stmt);
     }
-
     header("Location: admin-rezerwacje");
     exit();
 }
 
-// pobieranie rezerwacji
+// pobieranie rezerwacji z bazy żeby wysietlić w tabeli
 $result = $conn->query("
     SELECT r.id, r.guest_name, r.guest_email, r.guest_phone,
            r.num_guests, r.date_from, r.date_to, r.status, r.created_at,
@@ -31,19 +32,22 @@ $result = $conn->query("
     ORDER BY
         FIELD(r.status, 'pending', 'confirmed', 'cancelled'),
         r.date_from ASC
+        -- FIELD() sortuje według własnej kolejności:
+        -- najpierw oczekujące (pending), potem potwierdzone, na końcu anulowane
+        -- w ramach każdego statusu — sortujemy po dacie przyjazdu
 ");
 
 $reservations = [];
 while ($row = $result->fetch_assoc()) {
     $reservations[] = $row;
 }
-
 $statusLabels = [
     'pending'   => 'Oczekująca',
     'confirmed' => 'Potwierdzona',
     'cancelled' => 'Anulowana',
 ];
 
+// zmiana formatu daty
 function formatDatePL(string $date): string {
     [$y, $m, $d] = explode('-', $date);
     return "$d.$m.$y";
@@ -71,6 +75,7 @@ function formatDatePL(string $date): string {
             </thead>
             <tbody>
                 <?php foreach ($reservations as $res): ?>
+                    <!-- klasa row-pending / row-confirmed / row-cancelled zmienia kolor wiersza przez CSS -->
                     <tr class="row-<?= htmlspecialchars($res['status']) ?>">
                         <td><?= htmlspecialchars($res['room_name']) ?><br>
                             <small>(<?= (int)$res['capacity'] ?>-os.)</small>
@@ -91,6 +96,7 @@ function formatDatePL(string $date): string {
                         <td>
                             <div class="actions-cell">
                                 <?php if ($res['status'] === 'pending'): ?>
+                                    <!-- oczekująca: można potwierdzić lub odrzucić -->
                                     <form method="POST" action="admin-rezerwacje">
                                         <input type="hidden" name="reservation_id" value="<?= (int)$res['id'] ?>">
                                         <input type="hidden" name="action" value="confirmed">
@@ -103,6 +109,7 @@ function formatDatePL(string $date): string {
                                         <button type="submit" class="btn-cancel">Odrzuć</button>
                                     </form>
                                 <?php elseif ($res['status'] === 'confirmed'): ?>
+                                    <!-- potwierdzona: można jeszcze anulować -->
                                     <form method="POST" action="admin-rezerwacje"
                                           onsubmit="return confirm('Anulować potwierdzoną rezerwację?');">
                                         <input type="hidden" name="reservation_id" value="<?= (int)$res['id'] ?>">
@@ -110,6 +117,7 @@ function formatDatePL(string $date): string {
                                         <button type="submit" class="btn-cancel">Anuluj</button>
                                     </form>
                                 <?php else: ?>
+                                    <!-- anulowana: brak dostępnych akcji -->
                                     <span class="text-muted">—</span>
                                 <?php endif; ?>
                             </div>

@@ -8,10 +8,14 @@
 //   https://phpzag.com/online-hotel-reservation-system-with-php-mysql/
 // - Formularz rezerwacji: https://codeshack.io/hotel-reservation-form-php/
 
+// flagi, które odczytuje rezerwacje.php żeby wyświetlić komunikat gościowi
 $formSuccess = false;
 $formError   = '';
 
+// działa jeżeli formularz został wysłany
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // dane z formularza
     $room_id     = (int)  trim($_POST['room_id']     ?? '');
     $guest_name  =        trim($_POST['guest_name']  ?? '');
     $guest_email =        trim($_POST['guest_email'] ?? '');
@@ -20,19 +24,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date_from   =        trim($_POST['date_from']   ?? '');
     $date_to     =        trim($_POST['date_to']     ?? '');
 
+    // sprawdzenie czy wszystkie pola są wypełnione
     if (!$room_id || !$guest_name || !$guest_email || !$guest_phone || !$num_guests || !$date_from || !$date_to) {
         $formError = 'Wszystkie pola są wymagane.';
+
+    // czy e-mail jest ok, funkcja wbudowana w PHP
     } elseif (!filter_var($guest_email, FILTER_VALIDATE_EMAIL)) {
         $formError = 'Podaj prawidłowy adres e-mail.';
+
+    // poprawność numeru telefonu
     } elseif (!preg_match('/^[\d\s\+\-\(\)]{7,15}$/', $guest_phone)) {
         $formError = 'Podaj prawidłowy numer telefonu (cyfry, spacje, +, -).';
+
     } elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date_from) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $date_to)) {
         $formError = 'Nieprawidłowy format daty.';
+
     } elseif ($date_from < date('Y-m-d')) {
         $formError = 'Data przyjazdu nie może być w przeszłości.';
+
     } elseif ($date_from >= $date_to) {
         $formError = 'Data wyjazdu musi być późniejsza niż data przyjazdu.';
+
     } else {
+        // zapytanie czy pokój wgl istnieje
         $stmtRoom = mysqli_prepare($conn, "SELECT capacity FROM rooms WHERE id = ?");
         mysqli_stmt_bind_param($stmtRoom, 'i', $room_id);
         mysqli_stmt_execute($stmtRoom);
@@ -40,9 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$roomRow) {
             $formError = 'Wybrany pokój nie istnieje.';
+
+        // walidacja liczby gosci
         } elseif ($num_guests > $roomRow['capacity'] || $num_guests < 1) {
             $formError = 'Nieprawidłowa liczba osób dla wybranego pokoju.';
+
         } else {
+
+            // sprawdzenie czy daty nie kolidują z inna rezerwacją
             $stmtCheck = mysqli_prepare($conn, "
                 SELECT COUNT(*) AS cnt FROM reservations
                 WHERE room_id = ? AND status != 'cancelled'
@@ -59,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     INSERT INTO reservations (room_id, guest_name, guest_email, guest_phone, num_guests, date_from, date_to)
                     VALUES (?, ?, ?, ?, ?, ?, ?)
                 ");
+                // 'isssiss' to są typy parametrów i to int, s to string (kolejność jak w VALUES)
                 mysqli_stmt_bind_param($stmtIns, 'isssiss', $room_id, $guest_name, $guest_email, $guest_phone, $num_guests, $date_from, $date_to);
                 if (mysqli_stmt_execute($stmtIns)) {
                     $formSuccess = true;
