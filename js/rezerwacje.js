@@ -3,10 +3,10 @@
 (function () {
 
     // zapamiętujemy co wybrał użytkownik
-    let selectedFrom = null;  // data przyjazdu 
-    let selectedTo   = null;  // data wyjazdu
-    let step         = 'from'; // krok wyboru: 'from' = czekamy na kliknięcie przyjazdu,
-                               //              'to'   = czekamy na kliknięcie wyjazdu
+    let selectedFrom = null;  
+    let selectedTo   = null;  
+    let step         = 'from'; 
+                               
 
     // elementy DOM
     const selectionInfo = document.getElementById('selection-info');  
@@ -203,7 +203,7 @@
                     selectedFrom = date;
                     selectedTo   = null;
                 } else {
-                    // wszystko sie zgadza to uruchamiamy wyszukiwanie pokoi 
+                    // jak wszystko sie zgadza to uruchamiamy wyszukiwanie pokoi 
                     selectedTo = date;
                     step       = 'from';   // resetujemy krok na wypadek kolejnego wyboru
                     fetchRooms(selectedFrom, selectedTo);

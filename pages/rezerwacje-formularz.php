@@ -1,13 +1,6 @@
 <?php
 /** @var mysqli $conn */
 
-// Inspiracja i źródła:
-// - Wzorzec SQL do wykrywania nakładających się rezerwacji:
-//   https://www.daniweb.com/programming/web-development/threads/479348/room-availability-check-with-date-range
-// - Ogólna architektura systemu rezerwacji PHP/MySQL:
-//   https://phpzag.com/online-hotel-reservation-system-with-php-mysql/
-// - Formularz rezerwacji: https://codeshack.io/hotel-reservation-form-php/
-
 // flagi, które odczytuje rezerwacje.php żeby wyświetlić komunikat gościowi
 $formSuccess = false;
 $formError   = '';
